@@ -1,8 +1,14 @@
 import React from "react";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
+import HomeLink from "../components/shared/HomeLink";
 
 const About = () => {
   return (
     <div>
+      <Breadcrumb>
+        <HomeLink />
+        <Breadcrumb.Item active>About</Breadcrumb.Item>
+      </Breadcrumb>
       <h1>About</h1>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam voluptas
       nisi corporis sunt accusamus minima ut. Quasi inventore dignissimos

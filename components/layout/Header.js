@@ -11,7 +11,7 @@ function Header() {
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container>
             <Link href="/">
-              <a className="nav-link">
+              <a className="nav-link logo">
                 <strong>Next</strong>
                 <span>Turn</span>
               </a>
