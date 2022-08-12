@@ -1,15 +1,14 @@
 import React from "react";
 import { baseURL } from "../constant/Constant";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Link from "next/link";
 
 const HomeLink = () => {
   return (
     <>
-      <li className="breadcrumb-item">
-        <Link href={baseURL}>
-          <a>Home</a>
-        </Link>
-      </li>
+      <Link href={baseURL} passHref>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+      </Link>
     </>
   );
 };
