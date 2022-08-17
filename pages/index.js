@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,8 +11,14 @@ import { chartIcon } from "../components/UI/chartIcon";
 import { securityIcon } from "../components/UI/securityIcon";
 import { accountIcon } from "../components/UI/accountIcon";
 import styled from "../styles/Home.module.css";
+import LoginModal from "../components/UI/modal";
 
 export default function Home() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+
+  const handleShow = () => setShow(true);
   return (
     <>
       <main>
@@ -28,11 +35,9 @@ export default function Home() {
                 than 3 million products are waiting for you.
               </p>
               <div className="mt-5">
-                {/* <Link href="/about" passHref> */}
-                <Button variant="primary" size="lg">
+                <Button variant="primary" size="lg" onClick={handleShow}>
                   Get Started
                 </Button>
-                {/* </Link> */}
               </div>
             </Col>
             <Col sm={6}>
@@ -95,7 +100,7 @@ export default function Home() {
               </h2>
               <p className="para__md mt-3">
                 Many people aspire to be writers. There is a certain romance to
-                it, after all. However, many of these people don&apos;t actually
+                it, after all. However, many of these people don't actually
                 write, which can be a real problem. It takes a lot of hours to
                 get proficient in anything, and writing is no exception. The
                 majority of people can write to a reasonable level, but it takes
@@ -224,8 +229,8 @@ export default function Home() {
               <Image
                 src="/photo-1.jpg"
                 alt="Photo 1"
-                width={640}
-                height={1139}
+                width={320}
+                height={569}
                 layout="responsive"
                 className="curved__img"
               />
@@ -234,8 +239,8 @@ export default function Home() {
               <Image
                 src="/photo-2.jpg"
                 alt="Photo 2"
-                width={640}
-                height={1139}
+                width={320}
+                height={569}
                 layout="responsive"
                 className="curved__img"
               />
@@ -244,19 +249,20 @@ export default function Home() {
               <Image
                 src="/photo-3.jpg"
                 alt="Photo 3"
-                width={640}
-                height={1139}
+                width={320}
+                height={569}
                 layout="responsive"
                 className="curved__img"
               />
             </Col>
             <Col sm={12} className="text-center mt-4">
-              <Button variant="outline-primary" size="lg">
+              <Button variant="outline-primary" size="lg" onClick={handleShow}>
                 Start Investing
               </Button>
             </Col>
           </Row>
         </Container>
+        <LoginModal show={show} handleClose={handleClose} />
       </main>
     </>
   );

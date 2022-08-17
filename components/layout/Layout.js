@@ -3,8 +3,6 @@ import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
 import { Container, Row, Col } from "react-bootstrap";
-import LoginModal from "../UI/modal";
-
 const Layout = ({ children }) => {
   return (
     <>
@@ -21,7 +19,6 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <LoginModal />
       <main style={{ flex: "1" }}>
         <Container>
           <Row>

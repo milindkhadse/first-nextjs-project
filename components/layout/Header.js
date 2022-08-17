@@ -18,7 +18,7 @@ function Header() {
           <Container>
             <Link href="/">
               <a className="nav-link logo">
-                <span>Next</span>
+                <span className="fw__500">Next</span>
                 <span>Turn</span>
               </a>
             </Link>
