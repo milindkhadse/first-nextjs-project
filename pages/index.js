@@ -95,11 +95,11 @@ export default function Home() {
               </h2>
               <p className="para__md mt-3">
                 Many people aspire to be writers. There is a certain romance to
-                it, after all. However, many of these people don’t actually
+                it, after all. However, many of these people don&apos;t actually
                 write, which can be a real problem. It takes a lot of hours to
                 get proficient in anything, and writing is no exception. The
                 majority of people can write to a reasonable level, but it takes
-                time and effort to get good.{" "}
+                time and effort to get good.
               </p>
             </Col>
             <Col sm={8}>
@@ -214,7 +214,7 @@ export default function Home() {
           <Row className="g-4 mt-5 mb-5">
             <Col sm={12} className="text-center">
               <h2 className="h1">For you. And everyone.</h2>
-              <p className="para__md">
+              <p className="para__md mt-4">
                 Make informed investment decisions across equity, commodity, and
                 currency segments with our specific event-based daily, weekly,
                 and monthly reports.
@@ -226,8 +226,7 @@ export default function Home() {
                 alt="Photo 1"
                 width={640}
                 height={1139}
-                layout="fill"
-                objectFit="cover"
+                layout="responsive"
                 className="curved__img"
               />
             </Col>
@@ -237,8 +236,7 @@ export default function Home() {
                 alt="Photo 2"
                 width={640}
                 height={1139}
-                layout="fill"
-                objectFit="cover"
+                layout="responsive"
                 className="curved__img"
               />
             </Col>
@@ -248,13 +246,14 @@ export default function Home() {
                 alt="Photo 3"
                 width={640}
                 height={1139}
-                layout="fill"
-                objectFit="cover"
+                layout="responsive"
                 className="curved__img"
               />
             </Col>
-            <Col sm={12} className="text-center">
-              <Button variant="outline-primary">Start Investing</Button>
+            <Col sm={12} className="text-center mt-4">
+              <Button variant="outline-primary" size="lg">
+                Start Investing
+              </Button>
             </Col>
           </Row>
         </Container>

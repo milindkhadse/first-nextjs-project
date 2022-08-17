@@ -38,6 +38,9 @@ body {
 .curved__img {
   border-radius: 12px;
 }
+footer {
+  color: #ccc;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
