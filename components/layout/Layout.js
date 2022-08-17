@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
-import { Container, Row, Col } from "react-bootstrap";
 const Layout = ({ children }) => {
   return (
     <>
@@ -19,13 +18,7 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main style={{ flex: "1" }}>
-        <Container>
-          <Row>
-            <Col>{children}</Col>
-          </Row>
-        </Container>
-      </main>
+      <main style={{ flex: "1" }}>{children}</main>
       <Footer />
     </>
   );

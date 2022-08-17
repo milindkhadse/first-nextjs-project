@@ -7,7 +7,6 @@ import Card from "react-bootstrap/Card";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Image from "next/image";
-import Link from "next/link";
 import { chartIcon } from "../components/UI/chartIcon";
 import { securityIcon } from "../components/UI/securityIcon";
 import { accountIcon } from "../components/UI/accountIcon";
