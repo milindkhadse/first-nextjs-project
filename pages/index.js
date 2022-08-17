@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Image from "next/image";
+import Link from "next/link";
 import { chartIcon } from "../components/UI/chartIcon";
 import { securityIcon } from "../components/UI/securityIcon";
 import { accountIcon } from "../components/UI/accountIcon";
@@ -259,6 +260,52 @@ export default function Home() {
               <Button variant="outline-primary" size="lg" onClick={handleShow}>
                 Start Investing
               </Button>
+            </Col>
+          </Row>
+          <Row className="mt-5 mb-5 g-4 justify-content-md-center">
+            <Col sm={8}>
+              <Row className="align-items-center text-center">
+                <Col sm={6}>
+                  <p className="para__md mb-0">Download one of India's</p>
+                  <h3 className="h1">Best trading app</h3>
+
+                  <Row className="mt-4">
+                    <Col>
+                      <Button variant="outline-secondary align-middle">
+                        <img
+                          src="/google_logo_logos_play_icon.svg"
+                          alt="Google play"
+                          width="32"
+                          height="32"
+                          className="align-middle mr-1"
+                        />
+                        Google Play
+                      </Button>
+                    </Col>
+                    <Col>
+                      <Button variant="outline-secondary align-middle">
+                        <img
+                          src="/apple_brand_brands_ios_logo_icon.svg"
+                          alt="App Store"
+                          width="32"
+                          height="32"
+                          className="align-middle mr-1"
+                        />
+                        App Store
+                      </Button>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col sm={6} className="mt-4">
+                  <Image
+                    src="/undraw_mobile_app_re_catg.svg"
+                    alt="Photo 2"
+                    width={876}
+                    height={744}
+                    layout="responsive"
+                  />
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>
