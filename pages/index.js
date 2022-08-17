@@ -1,10 +1,15 @@
-import styled from "../styles/Home.module.css";
-import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 import Image from "next/image";
-import Link from "next/link";
 import { chartIcon } from "../components/UI/chartIcon";
 import { securityIcon } from "../components/UI/securityIcon";
 import { accountIcon } from "../components/UI/accountIcon";
+import styled from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -80,6 +85,176 @@ export default function Home() {
                   </Card.Text>
                 </Card.Body>
               </Card>
+            </Col>
+          </Row>
+
+          <Row className="g-4 mt-5 mb-5 align-items-center">
+            <Col sm={4}>
+              <h2 className="h1">
+                Becoming No <strong>#1</strong> For Investment Needs
+              </h2>
+              <p className="para__md mt-3">
+                Many people aspire to be writers. There is a certain romance to
+                it, after all. However, many of these people don’t actually
+                write, which can be a real problem. It takes a lot of hours to
+                get proficient in anything, and writing is no exception. The
+                majority of people can write to a reasonable level, but it takes
+                time and effort to get good.{" "}
+              </p>
+            </Col>
+            <Col sm={8}>
+              <Image
+                src="/savings_re_eq4w.svg"
+                alt="Financial Assistance"
+                width={800}
+                height={400}
+                layout="responsive"
+              />
+            </Col>
+          </Row>
+
+          <Row className="g-4 mt-5 mb-5">
+            <Col sm={12} className="text-center">
+              <h2 className="h1">Ways to grow your wealth</h2>
+            </Col>
+            <Col sm={12}>
+              <Tabs
+                defaultActiveKey="stocks"
+                id="uncontrolled-tab-example"
+                className="mb-3"
+              >
+                <Tab eventKey="stocks" title="Stocks">
+                  <Row className="pt-5 pb-5 align-items-center">
+                    <Col sm={6}>
+                      <Image
+                        src="/stocks.svg"
+                        alt="Financial Assistance"
+                        width={800}
+                        height={400}
+                        layout="responsive"
+                      />
+                    </Col>
+                    <Col sm={6}>
+                      <h3 className="mb-4">Stocks</h3>
+                      <ul>
+                        <li className="para__md mb-3">
+                          Discover stocks with smart lists and smart filters
+                        </li>
+                        <li className="para__md mb-3">
+                          Access key company information
+                        </li>
+                        <li className="para__md">
+                          Buy and sell stocks in a single click
+                        </li>
+                      </ul>
+                    </Col>
+                  </Row>
+                </Tab>
+                <Tab eventKey="ipo" title="IPO">
+                  <Row className="pt-5 pb-5 align-items-center">
+                    <Col sm={6}>
+                      <Image
+                        src="/ipo.svg"
+                        alt="IPO"
+                        width={800}
+                        height={400}
+                        layout="responsive"
+                      />
+                    </Col>
+                    <Col sm={6}>
+                      <h3 className="mb-4">IPO</h3>
+                      <ul>
+                        <li className="para__md mb-3">
+                          An initial public offering (IPO) refers
+                        </li>
+                        <li className="para__md mb-3">
+                          IPOs provide companies with an opportunity to obtain
+                        </li>
+                        <li className="para__md">
+                          Companies hire investment banks to market, gauge
+                          demand
+                        </li>
+                      </ul>
+                    </Col>
+                  </Row>
+                </Tab>
+                <Tab eventKey="mutualfund" title="Mutual Fund">
+                  <Row className="pt-5 pb-5 align-items-center">
+                    <Col sm={6}>
+                      <Image
+                        src="/fund.svg"
+                        alt="Mutual Fund"
+                        width={800}
+                        height={400}
+                        layout="responsive"
+                      />
+                    </Col>
+                    <Col sm={6}>
+                      <h3 className="mb-4">Mutual Fund</h3>
+                      <ul>
+                        <li className="para__md mb-3">
+                          New fund Offerings lets you purchase units of any new
+                          fund
+                        </li>
+                        <li className="para__md mb-3">
+                          First Subcription offering by a new or existing AMC
+                        </li>
+                        <li className="para__md">
+                          Comparable to IPO for companies. Profitable if
+                          anlayzed carefully
+                        </li>
+                      </ul>
+                    </Col>
+                  </Row>
+                </Tab>
+              </Tabs>
+            </Col>
+          </Row>
+
+          <Row className="g-4 mt-5 mb-5">
+            <Col sm={12} className="text-center">
+              <h2 className="h1">For you. And everyone.</h2>
+              <p className="para__md">
+                Make informed investment decisions across equity, commodity, and
+                currency segments with our specific event-based daily, weekly,
+                and monthly reports.
+              </p>
+            </Col>
+            <Col sm={4}>
+              <Image
+                src="/photo-1.jpg"
+                alt="Photo 1"
+                width={640}
+                height={1139}
+                layout="fill"
+                objectFit="cover"
+                className="curved__img"
+              />
+            </Col>
+            <Col sm={4}>
+              <Image
+                src="/photo-2.jpg"
+                alt="Photo 2"
+                width={640}
+                height={1139}
+                layout="fill"
+                objectFit="cover"
+                className="curved__img"
+              />
+            </Col>
+            <Col sm={4}>
+              <Image
+                src="/photo-3.jpg"
+                alt="Photo 3"
+                width={640}
+                height={1139}
+                layout="fill"
+                objectFit="cover"
+                className="curved__img"
+              />
+            </Col>
+            <Col sm={12} className="text-center">
+              <Button variant="outline-primary">Start Investing</Button>
             </Col>
           </Row>
         </Container>

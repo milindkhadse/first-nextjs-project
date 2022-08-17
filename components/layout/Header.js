@@ -8,11 +8,17 @@ function Header() {
   return (
     <>
       {["md"].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+        <Navbar
+          key={expand}
+          bg="light"
+          expand={expand}
+          className="mb-3"
+          sticky="top"
+        >
           <Container>
             <Link href="/">
               <a className="nav-link logo">
-                <strong>Next</strong>
+                <span>Next</span>
                 <span>Turn</span>
               </a>
             </Link>

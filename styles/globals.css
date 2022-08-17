@@ -29,6 +29,16 @@ body {
 .color__primary {
   color: var(--angelicBlue);
 }
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+.mt-5 {
+  margin-top: 5rem !important;
+}
+.curved__img {
+  border-radius: 12px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

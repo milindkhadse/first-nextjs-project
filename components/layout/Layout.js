@@ -9,13 +9,13 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <title>
-          Dummy Title - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          NextTurn - Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Quis, odit.
         </title>
         <meta name="robots" content="noindex,nofollow" />
         <meta
           name="description"
-          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam rem nostrum obcaecati quia assumenda animi consequuntur illum, in ut asperiores. Laudantium laboriosam porro omnis eius aut dolorem autem sequi!"
+          content="Trusting in the security of the Global leader in broker, more than 3 million products are waiting for you."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
