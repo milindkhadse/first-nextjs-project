@@ -39,7 +39,7 @@ function Header() {
                     <a className="nav-link">About</a>
                   </Link>
                   <Link href="/products">
-                    <a className="nav-link">Product</a>
+                    <a className="nav-link">Products</a>
                   </Link>
                 </Nav>
               </Offcanvas.Body>

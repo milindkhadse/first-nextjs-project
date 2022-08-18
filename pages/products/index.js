@@ -5,7 +5,6 @@ import HomeLink from "../../components/shared/HomeLink";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "next/image";
 import Link from "next/link";
 // using clientside data fatching
 // import { getProductURL } from "../../data/products-api";
@@ -44,7 +43,7 @@ const Products = (props) => {
         {products.map((item) => {
           return (
             <Col sm={6} key={item.id} className="product__list mb-4">
-              <Link href="">
+              <Link href={`/products/${item.id}`}>
                 <a>
                   <Card>
                     <img
@@ -55,7 +54,7 @@ const Products = (props) => {
                     {/* <Image src={item.image} width={640} height={480} /> */}
                     <Card.Body>
                       <h2 className="h4">{item.name}</h2>
-                      <h5 className="primaryBlack mt-3">{item.price}</h5>
+                      <h5 className="primaryBlack mt-3">₹ {item.price}</h5>
                       <Card.Text className="color__primary mt-4">
                         {item.info}
                       </Card.Text>
@@ -113,6 +112,7 @@ const Products = (props) => {
 };
 
 export async function getStaticProps() {
+  // file configuration
   const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
   const jsonData = await fs.readFileSync(filePath);
   const data = JSON.parse(jsonData);
