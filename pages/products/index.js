@@ -11,8 +11,8 @@ import { getProductURL } from "../../data/products-api";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     async function getPData() {
       const response = await fetch(getProductURL);
@@ -33,7 +33,7 @@ const Products = () => {
           </Breadcrumb>
         </Col>
       </Row>
-      <Row className="mt-5 mb-5 align-items-center">
+      <Row className="mt-5 mb-5">
         {loading ? (
           <h1
             style={{
@@ -47,15 +47,20 @@ const Products = () => {
         ) : (
           products.map((item) => {
             return (
-              <Col sm={4} key={item.id} className="product__list">
+              <Col sm={6} key={item.id} className="product__list mb-4">
                 <Link href="">
                   <a>
                     <Card>
-                      <Image src={item.image} width={640} height={480} />
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="img-fluid"
+                      />
+                      {/* <Image src={item.image} width={640} height={480} /> */}
                       <Card.Body>
                         <h2 className="h4">{item.name}</h2>
-                        <h5 className="primaryBlack">{item.price}</h5>
-                        <Card.Text className="color__primary">
+                        <h5 className="primaryBlack mt-3">{item.price}</h5>
+                        <Card.Text className="color__primary mt-4">
                           {item.info}
                         </Card.Text>
                       </Card.Body>
