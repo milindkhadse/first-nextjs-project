@@ -5,7 +5,6 @@ import Col from "react-bootstrap/Col";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import HomeLink from "../../components/shared/HomeLink";
 import Link from "next/link";
-import Image from "next/image";
 import fs from "fs";
 import path from "path";
 
@@ -39,13 +38,15 @@ const ProductDetailPage = (props) => {
             <img
               src={loadedProduct.image}
               alt={loadedProduct.name}
+              width="640"
+              height="480"
               className="img-fluid curved__img"
             />
           </div>
         </Col>
         <Col sm={6}>
           <h1>{loadedProduct.name}</h1>
-          <h5 className="primaryBlack mt-3">₹ {loadedProduct.price}</h5>
+          <p className="text-secondary mt-3">{loadedProduct.timeStamp}</p>
           <p className="para__md mt-4">{loadedProduct.info}</p>
         </Col>
       </Row>
@@ -53,6 +54,7 @@ const ProductDetailPage = (props) => {
   );
 };
 
+// added helper function
 async function getData() {
   const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
   const jsonData = await fs.readFileSync(filePath);
@@ -83,6 +85,7 @@ export async function getStaticPaths() {
 
   const ids = data.products.map((product) => product.id);
 
+  // added "pid" file name inside params object
   const pathsWithParams = ids.map((id) => ({ params: { pid: id } }));
   return {
     paths: pathsWithParams,

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Card from "react-bootstrap/Card";
 import HomeLink from "../../components/shared/HomeLink";
@@ -54,7 +53,7 @@ const Products = (props) => {
                     {/* <Image src={item.image} width={640} height={480} /> */}
                     <Card.Body>
                       <h2 className="h4">{item.name}</h2>
-                      <h5 className="primaryBlack mt-3">₹ {item.price}</h5>
+                      <p className="text-secondary mt-3">{item.timeStamp}</p>
                       <Card.Text className="color__primary mt-4">
                         {item.info}
                       </Card.Text>
@@ -94,7 +93,7 @@ const Products = (props) => {
                       /> 
                       <Card.Body>
                         <h2 className="h4">{item.name}</h2>
-                        <h5 className="primaryBlack mt-3">{item.price}</h5>
+                        <h5 className="primaryBlack mt-3">{item.timeStamp}</h5>
                         <Card.Text className="color__primary mt-4">
                           {item.info}
                         </Card.Text>
