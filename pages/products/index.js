@@ -7,21 +7,27 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "next/image";
 import Link from "next/link";
-import { getProductURL } from "../../data/products-api";
+// using clientside data fatching
+// import { getProductURL } from "../../data/products-api";
 
-const Products = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+import fs from "fs";
+import path from "path";
 
-  useEffect(() => {
-    async function getPData() {
-      const response = await fetch(getProductURL);
-      const products = await response.json();
-      setProducts(products);
-      setLoading(false);
-    }
-    getPData();
-  }, []);
+const Products = (props) => {
+  const { products } = props;
+  // using clientside data fatching
+  // const [products, setProducts] = useState([]);
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   async function getPData() {
+  //     const response = await fetch(getProductURL);
+  //     const products = await response.json();
+  //     setProducts(products);
+  //     setLoading(false);
+  //   }
+  //   getPData();
+  // }, []);
 
   return (
     <Container>
@@ -33,7 +39,38 @@ const Products = () => {
           </Breadcrumb>
         </Col>
       </Row>
+
       <Row className="mt-5 mb-5">
+        {products.map((item) => {
+          return (
+            <Col sm={6} key={item.id} className="product__list mb-4">
+              <Link href="">
+                <a>
+                  <Card>
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="img-fluid"
+                    />
+                    {/* <Image src={item.image} width={640} height={480} /> */}
+                    <Card.Body>
+                      <h2 className="h4">{item.name}</h2>
+                      <h5 className="primaryBlack mt-3">{item.price}</h5>
+                      <Card.Text className="color__primary mt-4">
+                        {item.info}
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </a>
+              </Link>
+            </Col>
+          );
+        })}
+      </Row>
+
+      {/* client side data fatching with useEffect */}
+
+      {/* <Row className="mt-5 mb-5">
         {loading ? (
           <h1
             style={{
@@ -55,8 +92,7 @@ const Products = () => {
                         src={item.image}
                         alt={item.name}
                         className="img-fluid"
-                      />
-                      {/* <Image src={item.image} width={640} height={480} /> */}
+                      /> 
                       <Card.Body>
                         <h2 className="h4">{item.name}</h2>
                         <h5 className="primaryBlack mt-3">{item.price}</h5>
@@ -71,17 +107,21 @@ const Products = () => {
             );
           })
         )}
-      </Row>
+      </Row>  */}
     </Container>
   );
 };
 
-export default Products;
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
+  const jsonData = await fs.readFileSync(filePath);
+  const data = JSON.parse(jsonData);
 
-// export async function getStaticProps(){
-//   return{
-//     props: {
-//       productdata:
-//     }
-//   }
-// }
+  return {
+    props: {
+      products: data.products,
+    },
+  };
+}
+
+export default Products;
