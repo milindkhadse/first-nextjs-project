@@ -5,6 +5,11 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Link from "next/link";
 
 function Header() {
+  // const [show, setShow] = useState();
+  // const onHide = () => {
+  //   setShow(false);
+  // };
+
   return (
     <>
       {["md"].map((expand) => (
@@ -16,11 +21,11 @@ function Header() {
           sticky="top"
         >
           <Container>
-            <Link href="/">
-              <a className="nav-link logo">
+            <Link href="/" passHref>
+              <Navbar.Brand className="logo">
                 <span className="fw__500">Next</span>
                 <span>Turn</span>
-              </a>
+              </Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
@@ -35,11 +40,11 @@ function Header() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Link href="/about">
-                    <a className="nav-link">About</a>
+                  <Link href="/about" passHref>
+                    <Nav.Link>About</Nav.Link>
                   </Link>
-                  <Link href="/products">
-                    <a className="nav-link">Products</a>
+                  <Link href="/products" passHref>
+                    <Nav.Link>Products</Nav.Link>
                   </Link>
                 </Nav>
               </Offcanvas.Body>
