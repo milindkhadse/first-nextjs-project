@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Link from "next/link";
+import Image from "next/image";
 // using clientside data fatching
 // import { getProductURL } from "../../data/products-api";
 
@@ -45,12 +46,18 @@ const Products = (props) => {
               <Link href={`/products/${item.id}`}>
                 <a>
                   <Card>
-                    <img
+                    {/* <img
                       src={item.image}
                       alt={item.name}
                       className="img-fluid"
+                    /> */}
+
+                    <Image
+                      src={item.image}
+                      width={640}
+                      height={480}
+                      layout="responsive"
                     />
-                    {/* <Image src={item.image} width={640} height={480} /> */}
                     <Card.Body>
                       <h2 className="h4">{item.name}</h2>
                       <p className="text-secondary mt-3">{item.timeStamp}</p>

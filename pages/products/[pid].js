@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import HomeLink from "../../components/shared/HomeLink";
 import Link from "next/link";
+import Image from "next/image";
 import fs from "fs";
 import path from "path";
 
@@ -27,21 +28,22 @@ const ProductDetailPage = (props) => {
       <Row className="g-5 mt-4 mb-4">
         <Col sm={6}>
           <div className="text-center">
-            {/* <Image
+            <Image
               src={loadedProduct.image}
               alt={loadedProduct.name}
-              width={1300}
-              height={500}
+              width={640}
+              height={480}
               layout="responsive"
-            /> */}
+              className="curved__img"
+            />
 
-            <img
+            {/* <img
               src={loadedProduct.image}
               alt={loadedProduct.name}
               width="640"
               height="480"
               className="img-fluid curved__img"
-            />
+            /> */}
           </div>
         </Col>
         <Col sm={6}>
