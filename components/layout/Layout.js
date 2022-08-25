@@ -6,10 +6,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>
-          NextTurn - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quis, odit.
-        </title>
+        <title>NextTurn - Made in ReactJs & NextJs</title>
         <meta name="robots" content="noindex,nofollow" />
         <meta
           name="description"
